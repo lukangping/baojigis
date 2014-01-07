@@ -1,0 +1,1 @@
+打开文件夹即可获取一个Workspace；打开其中的某个shapefile文件，即可得到FeatureClass。
