@@ -41,11 +41,13 @@
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.axMapControl2 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -54,7 +56,7 @@
             // axLicenseControl1
             // 
             this.axLicenseControl1.Enabled = true;
-            this.axLicenseControl1.Location = new System.Drawing.Point(382, 362);
+            this.axLicenseControl1.Location = new System.Drawing.Point(559, 376);
             this.axLicenseControl1.Name = "axLicenseControl1";
             this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
@@ -136,23 +138,32 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // axMapControl2
+            // 
+            this.axMapControl2.Location = new System.Drawing.Point(0, 409);
+            this.axMapControl2.Name = "axMapControl2";
+            this.axMapControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl2.OcxState")));
+            this.axMapControl2.Size = new System.Drawing.Size(265, 215);
+            this.axMapControl2.TabIndex = 7;
+            this.axMapControl2.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl2_OnMouseDown);
+            this.axMapControl2.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.axMapControl2_OnMouseMove);
+            // 
             // axMapControl1
             // 
-            this.axMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axMapControl1.Location = new System.Drawing.Point(265, 52);
+            this.axMapControl1.Location = new System.Drawing.Point(264, 52);
             this.axMapControl1.Name = "axMapControl1";
             this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
-            this.axMapControl1.Size = new System.Drawing.Size(696, 571);
-            this.axMapControl1.TabIndex = 2;
+            this.axMapControl1.Size = new System.Drawing.Size(697, 572);
+            this.axMapControl1.TabIndex = 6;
+            this.axMapControl1.OnExtentUpdated += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnExtentUpdatedEventHandler(this.axMapControl1_OnExtentUpdated);
             // 
             // axTOCControl1
             // 
-            this.axTOCControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.axTOCControl1.Location = new System.Drawing.Point(0, 52);
             this.axTOCControl1.Name = "axTOCControl1";
             this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
-            this.axTOCControl1.Size = new System.Drawing.Size(265, 571);
-            this.axTOCControl1.TabIndex = 1;
+            this.axTOCControl1.Size = new System.Drawing.Size(265, 361);
+            this.axTOCControl1.TabIndex = 5;
             // 
             // axToolbarControl1
             // 
@@ -168,9 +179,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 623);
-            this.Controls.Add(this.axLicenseControl1);
+            this.Controls.Add(this.axMapControl2);
             this.Controls.Add(this.axMapControl1);
             this.Controls.Add(this.axTOCControl1);
+            this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -180,6 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
@@ -191,8 +204,6 @@
         #endregion
 
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
-        private ESRI.ArcGIS.Controls.AxTOCControl axTOCControl1;
-        private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuUseMap;
@@ -205,6 +216,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuDataTransfer;
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
+        private ESRI.ArcGIS.Controls.AxTOCControl axTOCControl1;
+        private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
+        private ESRI.ArcGIS.Controls.AxMapControl axMapControl2;
     }
 }
 
