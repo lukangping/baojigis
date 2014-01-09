@@ -32,8 +32,6 @@
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuUseMap = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuOpenMap = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuDisplayLayers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageEnterprise = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInquire = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGasAnalyse = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +44,6 @@
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
-            this.subMenuDisplayEnterprises = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
@@ -83,27 +80,9 @@
             // 
             // menuUseMap
             // 
-            this.menuUseMap.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subMenuOpenMap,
-            this.subMenuDisplayLayers,
-            this.subMenuDisplayEnterprises});
             this.menuUseMap.Name = "menuUseMap";
             this.menuUseMap.Size = new System.Drawing.Size(67, 20);
             this.menuUseMap.Text = "地图操作";
-            // 
-            // subMenuOpenMap
-            // 
-            this.subMenuOpenMap.Name = "subMenuOpenMap";
-            this.subMenuOpenMap.Size = new System.Drawing.Size(152, 22);
-            this.subMenuOpenMap.Text = "打开地图";
-            this.subMenuOpenMap.Click += new System.EventHandler(this.subMenuOpenMap_Click);
-            // 
-            // subMenuDisplayLayers
-            // 
-            this.subMenuDisplayLayers.Name = "subMenuDisplayLayers";
-            this.subMenuDisplayLayers.Size = new System.Drawing.Size(152, 22);
-            this.subMenuDisplayLayers.Text = "新增椭圆";
-            this.subMenuDisplayLayers.Click += new System.EventHandler(this.subMenuDisplayLayers_Click);
             // 
             // menuManageEnterprise
             // 
@@ -184,13 +163,6 @@
             this.axToolbarControl1.Size = new System.Drawing.Size(961, 28);
             this.axToolbarControl1.TabIndex = 0;
             // 
-            // subMenuDisplayEnterprises
-            // 
-            this.subMenuDisplayEnterprises.Name = "subMenuDisplayEnterprises";
-            this.subMenuDisplayEnterprises.Size = new System.Drawing.Size(152, 22);
-            this.subMenuDisplayEnterprises.Text = "显示企业";
-            this.subMenuDisplayEnterprises.Click += new System.EventHandler(this.subMenuDisplayEnterprises_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -224,7 +196,6 @@
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuUseMap;
-        private System.Windows.Forms.ToolStripMenuItem subMenuOpenMap;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem menuManageEnterprise;
         private System.Windows.Forms.ToolStripMenuItem menuInquire;
@@ -234,8 +205,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuDataTransfer;
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
-        private System.Windows.Forms.ToolStripMenuItem subMenuDisplayLayers;
-        private System.Windows.Forms.ToolStripMenuItem subMenuDisplayEnterprises;
     }
 }
 

@@ -1,9 +1,8 @@
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.exe.config
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.exe
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.pdb
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.mainForm.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.Properties.Resources.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.exe.config
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.exe
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.pdb
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.exe
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.pdb
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
