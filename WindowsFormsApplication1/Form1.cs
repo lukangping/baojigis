@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
         private void load_shapefiles()
         {
             IMap map = axMapControl1.Map;
-            
+
             IWorkspaceFactory shapefileWorkspaceFactory = new ShapefileWorkspaceFactory();
             IWorkspace workspace = shapefileWorkspaceFactory.OpenFromFile(folder, 0);
             IFeatureWorkspace featureWorkspace = workspace as IFeatureWorkspace;
@@ -68,7 +68,7 @@ namespace WindowsFormsApplication1
             ISimpleRenderer simpleRender = new SimpleRendererClass();
             ICharacterMarkerSymbol characterMarkerSymbol = new CharacterMarkerSymbolClass();
             characterMarkerSymbol.CharacterIndex = 35;
-            characterMarkerSymbol.Color = getRGB(0, 115, 76);
+            characterMarkerSymbol.Color = getRGB(0, 120, 76);
             characterMarkerSymbol.Size = 20;
             simpleRender.Symbol = characterMarkerSymbol as ISymbol;
 
@@ -170,6 +170,34 @@ namespace WindowsFormsApplication1
             pPoint.PutCoords(e.mapX, e.mapY);
             this.axMapControl1.CenterAt(pPoint);
             this.axMapControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
+        }
+
+        public void FilterLayer(string where)
+        {
+            IFeatureLayer flyr = (IFeatureLayer)axMapControl1.get_Layer(0);
+
+            IQueryFilter queryFilter = new QueryFilterClass();
+            queryFilter.WhereClause = where;
+
+            ICharacterMarkerSymbol characterMarkerSymbol = new CharacterMarkerSymbolClass();
+            characterMarkerSymbol.CharacterIndex = 35;
+            characterMarkerSymbol.Color = getRGB(0, 94, 76);
+            characterMarkerSymbol.Size = 20;
+
+            //选取要素集
+            IFeatureSelection pFtSelection = flyr as IFeatureSelection;
+            pFtSelection.SetSelectionSymbol = true;
+            pFtSelection.SelectionSymbol = (ISymbol)characterMarkerSymbol;
+            pFtSelection.SelectFeatures(queryFilter, esriSelectionResultEnum.esriSelectionResultNew, false);
+
+            axMapControl1.ActiveView.Refresh();
+
+        }
+
+        private void axMapControl1_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
+        {
+            Console.Write("---");
+            FilterLayer("Id=2");
         }
 
     }
