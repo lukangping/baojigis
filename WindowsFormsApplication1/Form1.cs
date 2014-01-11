@@ -66,11 +66,14 @@ namespace WindowsFormsApplication1
         private ISimpleRenderer getSimpleRender()
         {
             ISimpleRenderer simpleRender = new SimpleRendererClass();
-            ICharacterMarkerSymbol characterMarkerSymbol = new CharacterMarkerSymbolClass();
-            characterMarkerSymbol.CharacterIndex = 35;
-            characterMarkerSymbol.Color = getRGB(0, 120, 76);
-            characterMarkerSymbol.Size = 20;
-            simpleRender.Symbol = characterMarkerSymbol as ISymbol;
+
+            ISimpleMarkerSymbol simpleMarkerSymbol = new SimpleMarkerSymbolClass();
+            simpleMarkerSymbol.Outline = false;
+            simpleMarkerSymbol.Color = getRGB(0, 168, 132);
+            simpleMarkerSymbol.Size = 10;
+            simpleMarkerSymbol.Style = esriSimpleMarkerStyle.esriSMSDiamond;
+
+            simpleRender.Symbol = simpleMarkerSymbol as ISymbol;
 
             return simpleRender;
         }
@@ -172,33 +175,50 @@ namespace WindowsFormsApplication1
             this.axMapControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
         }
 
-        public void FilterLayer(string where)
+        public void searchEnterprise(string where)
         {
             IFeatureLayer flyr = (IFeatureLayer)axMapControl1.get_Layer(0);
 
             IQueryFilter queryFilter = new QueryFilterClass();
             queryFilter.WhereClause = where;
 
-            ICharacterMarkerSymbol characterMarkerSymbol = new CharacterMarkerSymbolClass();
-            characterMarkerSymbol.CharacterIndex = 35;
-            characterMarkerSymbol.Color = getRGB(0, 94, 76);
-            characterMarkerSymbol.Size = 20;
+            ISimpleMarkerSymbol simpleMarkerSymbol = new SimpleMarkerSymbolClass();
+            simpleMarkerSymbol.Outline = true;
+            simpleMarkerSymbol.OutlineColor = getRGB(0, 0, 0);
+            simpleMarkerSymbol.Color = getRGB(0, 94, 76);
+            simpleMarkerSymbol.Size = 10;
+            simpleMarkerSymbol.Style = esriSimpleMarkerStyle.esriSMSDiamond;
 
             //选取要素集
             IFeatureSelection pFtSelection = flyr as IFeatureSelection;
             pFtSelection.SetSelectionSymbol = true;
-            pFtSelection.SelectionSymbol = (ISymbol)characterMarkerSymbol;
+            pFtSelection.SelectionSymbol = (ISymbol)simpleMarkerSymbol;
             pFtSelection.SelectFeatures(queryFilter, esriSelectionResultEnum.esriSelectionResultNew, false);
 
             axMapControl1.ActiveView.Refresh();
 
         }
 
-        private void axMapControl1_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
-            Console.Write("---");
-            FilterLayer("Id=2");
+            string enterpriseName = textBoxSearchName.Text;
+            searchEnterprise("Name like '%" + enterpriseName + "%'");
         }
+
+        private void textBoxSearchName_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (textBoxSearchName.Text=="请输入企业名称")
+            {
+                textBoxSearchName.Text = ""; 
+            }
+        }
+
+        private void textBoxSearchName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
 
     }
 }

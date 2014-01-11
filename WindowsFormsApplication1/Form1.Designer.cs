@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.menuUseMap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageEnterprise = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInquire = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,16 +42,15 @@
             this.menuDataTransfer = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.axMapControl2 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
-            this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,23 +63,41 @@
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
             this.axLicenseControl1.TabIndex = 3;
             // 
-            // menuStrip1
+            // panel1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuUseMap,
-            this.menuManageEnterprise,
-            this.menuInquire,
-            this.menuGasAnalyse,
-            this.menuWaterAnalyse,
-            this.menuManageUser,
-            this.menuDataTransfer,
-            this.menuHelp,
-            this.menuAbout});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(961, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonSearch);
+            this.panel1.Controls.Add(this.textBoxSearchName);
+            this.panel1.Location = new System.Drawing.Point(0, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 356);
+            this.panel1.TabIndex = 8;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSearch.Location = new System.Drawing.Point(181, 15);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(67, 26);
+            this.buttonSearch.TabIndex = 1;
+            this.buttonSearch.Text = "查询";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxSearchName
+            // 
+            this.textBoxSearchName.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxSearchName.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxSearchName.Location = new System.Drawing.Point(12, 15);
+            this.textBoxSearchName.Name = "textBoxSearchName";
+            this.textBoxSearchName.Size = new System.Drawing.Size(163, 26);
+            this.textBoxSearchName.TabIndex = 0;
+            this.textBoxSearchName.Text = "请输入企业名称";
+            this.textBoxSearchName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxSearchName_MouseClick);
+            this.textBoxSearchName.TextChanged += new System.EventHandler(this.textBoxSearchName_TextChanged);
             // 
             // menuUseMap
             // 
@@ -134,16 +153,30 @@
             this.menuAbout.Size = new System.Drawing.Size(43, 20);
             this.menuAbout.Text = "关于";
             // 
-            // openFileDialog1
+            // menuStrip1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuUseMap,
+            this.menuManageEnterprise,
+            this.menuInquire,
+            this.menuGasAnalyse,
+            this.menuWaterAnalyse,
+            this.menuManageUser,
+            this.menuDataTransfer,
+            this.menuHelp,
+            this.menuAbout});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(961, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // axMapControl2
             // 
-            this.axMapControl2.Location = new System.Drawing.Point(0, 409);
+            this.axMapControl2.Location = new System.Drawing.Point(0, 406);
             this.axMapControl2.Name = "axMapControl2";
             this.axMapControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl2.OcxState")));
-            this.axMapControl2.Size = new System.Drawing.Size(265, 215);
+            this.axMapControl2.Size = new System.Drawing.Size(265, 218);
             this.axMapControl2.TabIndex = 7;
             this.axMapControl2.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl2_OnMouseDown);
             this.axMapControl2.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.axMapControl2_OnMouseMove);
@@ -155,16 +188,7 @@
             this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
             this.axMapControl1.Size = new System.Drawing.Size(697, 572);
             this.axMapControl1.TabIndex = 6;
-            this.axMapControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl1_OnMouseDown);
             this.axMapControl1.OnExtentUpdated += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnExtentUpdatedEventHandler(this.axMapControl1_OnExtentUpdated);
-            // 
-            // axTOCControl1
-            // 
-            this.axTOCControl1.Location = new System.Drawing.Point(0, 52);
-            this.axTOCControl1.Name = "axTOCControl1";
-            this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
-            this.axTOCControl1.Size = new System.Drawing.Size(265, 361);
-            this.axTOCControl1.TabIndex = 5;
             // 
             // axToolbarControl1
             // 
@@ -180,9 +204,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 623);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.axMapControl2);
             this.Controls.Add(this.axMapControl1);
-            this.Controls.Add(this.axTOCControl1);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Controls.Add(this.menuStrip1);
@@ -191,11 +215,12 @@
             this.Text = "宝鸡市环境污染动态监管系统";
             this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,9 +231,12 @@
 
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
+        private ESRI.ArcGIS.Controls.AxMapControl axMapControl2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearchName;
         private System.Windows.Forms.ToolStripMenuItem menuUseMap;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem menuManageEnterprise;
         private System.Windows.Forms.ToolStripMenuItem menuInquire;
         private System.Windows.Forms.ToolStripMenuItem menuGasAnalyse;
@@ -217,9 +245,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuDataTransfer;
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
-        private ESRI.ArcGIS.Controls.AxTOCControl axTOCControl1;
-        private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
-        private ESRI.ArcGIS.Controls.AxMapControl axMapControl2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 
