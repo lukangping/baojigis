@@ -33,6 +33,7 @@ namespace SimpleForm
         private void GasPollution_Load(object sender, EventArgs e)
         {
             load_shapefiles();
+            
         }
 
         public void load_shapefiles()
@@ -204,5 +205,114 @@ namespace SimpleForm
             }
             return pfeatureworkspace;
         }
+
+        private void axMapControl1_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
+        {
+            IArray pIDArray;
+            IFeatureIdentifyObj pFeatIdObj;
+            IIdentifyObj pIdObj;
+
+            IFeatureLayer pLayer = axMapControl1.get_Layer(0) as IFeatureLayer;
+            IIdentify pIdentify;
+            pIdentify = (IIdentify)axMapControl1.get_Layer(0);
+            IEnvelope pEnv;
+            IActiveView pActiveView = axMapControl1.ActiveView;
+            IMap pMap = axMapControl1.Map;
+            pEnv = axMapControl1.TrackRectangle();
+
+            IFeatureClass pFC = pLayer.FeatureClass;
+            pLayer.Name = pFC.AliasName;
+            ILayerFields pLayerFields = pLayer as ILayerFields;
+
+            if (pEnv.IsEmpty == true)
+            {
+                tagRECT r;
+                r.bottom = e.y + 5;
+                r.top = e.y - 5;
+                r.left = e.x - 5;
+                r.right = e.x + 5;
+                pActiveView.ScreenDisplay.DisplayTransformation.TransformRect(pEnv, ref r, 4);
+                pEnv.SpatialReference = pActiveView.FocusMap.SpatialReference;
+            }
+            //pMap.SelectByShape(pEnv, null, false);
+            //pActiveView.Refresh();
+
+            DataSet ds = new DataSet("dsTest");
+            DataTable dt = new DataTable(pLayer.Name);
+            DataColumn dc = null;
+
+            pIDArray = pIdentify.Identify(pEnv);
+            if (pIDArray != null)
+            {
+                DataRow dr = dt.NewRow();
+                for (int i = 0; i < pIDArray.Count; i++)
+                {
+                    Console.WriteLine("---");
+                    Console.WriteLine((IFeatureIdentifyObj)pIDArray.get_Element(0));
+                    pFeatIdObj = (IFeatureIdentifyObj)pIDArray.get_Element(i);
+                    pIdObj = (IIdentifyObj)pFeatIdObj;
+
+                    IRowIdentifyObject pRowObj = pFeatIdObj as IRowIdentifyObject;
+                    
+                    IFeature pFeature = pRowObj.Row as IFeature;
+
+                    unqiueRender(pFeature, pLayer as IGeoFeatureLayer);
+
+                    if (pFeature != null)
+                    {
+                        for (int k = 0; k < pFeature.Table.Fields.FieldCount; k++)
+                        {
+                            dc = new DataColumn(pFeature.Table.Fields.get_Field(k).Name.ToString());
+                            dt.Columns.Add(dc);
+                            dc = null;
+                        }
+                        for (int j = 0; j < pFeature.Table.Fields.FieldCount; j++)
+                        {
+                            dr[j] = pFeature.get_Value(j).ToString();
+                        }
+                        dt.Rows.Add(dr);
+                        ds.Tables.Add(dt);
+                        dataGridView1.DataSource = ds.Tables[pLayer.Name];
+                    }
+                }
+                pEnv = null;
+
+            }
+            //else
+            //{
+            //    dataGridView1.DataSource = null;
+            //    MessageBox.Show("no feature is selected!");
+            //}
+            
+        }
+
+        public void unqiueRender(IFeature feature, IGeoFeatureLayer layer)
+        {
+            IUniqueValueRenderer uniqueValueRenderer = new UniqueValueRendererClass();
+            uniqueValueRenderer.FieldCount = 1;
+            uniqueValueRenderer.set_Field(0, "FID");
+
+            ISimpleMarkerSymbol simpleMarkerSymbol1 = new SimpleMarkerSymbolClass();
+            simpleMarkerSymbol1.Outline = false;
+            simpleMarkerSymbol1.Color = getRGB(0, 168, 132);
+            simpleMarkerSymbol1.Size = 10;
+            simpleMarkerSymbol1.Style = esriSimpleMarkerStyle.esriSMSDiamond;
+            uniqueValueRenderer.DefaultSymbol = simpleMarkerSymbol1 as ISymbol;
+            uniqueValueRenderer.UseDefaultSymbol = true;
+
+            ISimpleMarkerSymbol simpleMarkerSymbol = new SimpleMarkerSymbolClass();
+            simpleMarkerSymbol.Outline = true;
+            simpleMarkerSymbol.OutlineColor = getRGB(0, 0, 0);
+            simpleMarkerSymbol.Color = getRGB(0, 94, 76);
+            simpleMarkerSymbol.Size = 30;
+            simpleMarkerSymbol.Style = esriSimpleMarkerStyle.esriSMSDiamond;
+
+            uniqueValueRenderer.AddValue(feature.get_Value(0).ToString(), "FID", simpleMarkerSymbol as ISymbol);
+            layer.Renderer = uniqueValueRenderer as IFeatureRenderer;
+
+            axMapControl1.ActiveView.Refresh();
+        }
+
+        
     }
 }
