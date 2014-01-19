@@ -44,7 +44,7 @@ namespace SimpleForm
             IWorkspace workspace = shapefileWorkspaceFactory.OpenFromFile(folder, 0);
             IFeatureWorkspace featureWorkspace = workspace as IFeatureWorkspace;
 
-            //载入底图要素层
+            ////载入底图要素层
             IFeatureLayer featureLayer = new FeatureLayerClass();
             IFeatureClass featureClass = featureWorkspace.OpenFeatureClass("city_region.shp");
             featureLayer.FeatureClass = featureClass;
@@ -92,17 +92,25 @@ namespace SimpleForm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            IPoint point = new PointClass();
-            point.PutCoords(108, 34);
-            CreateVehicleFeature("gas", point, 2, 1, 0);
 
-            IPoint point2 = new PointClass();
-            point2.PutCoords(108, 34);
-            CreateVehicleFeature("gas2", point2, 1.5, 0.75, 0);
-            //drawElliptic();
+            double originX = double.Parse(labelX.Text);
+            double originY = double.Parse(labelY.Text);
+            IPoint originPoint = constructPoint(originX, originY);
+
+            IPoint centerPoint1 = constructPoint(originX -2 + 0, originY);
+            IPoint centerPoint2 = constructPoint(originX -2 + 0.2, originY);
+            IPoint centerPoint3 = constructPoint(originX -2 + 0.6, originY);
+            IPoint centerPoint4 = constructPoint(originX -2 + 1.2, originY);
+
+            CreateVehicleFeature("gas1", originPoint, centerPoint1, 2, 1, 1);
+            CreateVehicleFeature("gas2", originPoint, centerPoint2, 1.75, 0.75, 1);
+            CreateVehicleFeature("gas3", originPoint, centerPoint3, 1.25, 0.5, 1);
+            CreateVehicleFeature("gas4", originPoint, centerPoint4, 0.5, 0.25, 1);
+
+
         }
 
-        public IConstructEllipticArc CreateElliptic(IPoint centerpoint, double longeraxis, double shorteraxis, double angle)
+        public IConstructEllipticArc CreateElliptic(IPoint originPoint, IPoint centerpoint, double longeraxis, double shorteraxis, double angle)
         {
             double centerx = centerpoint.X;
             double centery = centerpoint.Y;
@@ -121,13 +129,19 @@ namespace SimpleForm
             IConstructEllipticArc pconstructEllipse = new EllipticArcClass();
             pconstructEllipse.ConstructEnvelope(pEnv);
             ITransform2D pTransform = pconstructEllipse as ITransform2D;
-            pTransform.Rotate(centerpoint, angle);
+
+            //orginPoint保证同一坐标为基准旋转
+            pTransform.Rotate(originPoint, angle);
             return pconstructEllipse;
         }
 
-        public void CreateVehicleFeature(string layerName, IPoint point, double longeraxis, double shorteraxis, double angle)
+        public void CreateVehicleFeature(string layerName, IPoint originPoint, IPoint centerPoint, double longeraxis, double shorteraxis, double angle)
         {
-            IFeatureWorkspace pvehicleworkspace = CreateEmptyLayerInmemeory("vehicle", null, 0);//建立内存工作空间
+            ILayer layer = axMapControl1.get_Layer(0);
+            IFeatureClass fc = (layer as IFeatureLayer).FeatureClass;
+            ISpatialReference pSpatialRef = (fc as IGeoDataset).SpatialReference;
+
+            IFeatureWorkspace pvehicleworkspace = CreateEmptyLayerInmemeory("vehicle", pSpatialRef, 0);//建立内存工作空间
             IFeatureClass pvehicleclass = pvehicleworkspace.OpenFeatureClass("vehicle"); //在之前的CreateEmptyLayerInmemeory方法中已经创建了一个名字为“vehicle”的要素集，这里把其打开
             IFeatureLayer pvehiclelayer = new FeatureLayerClass();
             pvehiclelayer.FeatureClass = pvehicleclass;  //把之前创建的shapefile “pvehicleclass：赋值给新创建的layer类pvehiclelayer
@@ -143,7 +157,7 @@ namespace SimpleForm
             
             ISegmentCollection pSegmentCollection1 = new PolygonClass();
 
-            IConstructEllipticArc pEllipticArc = CreateElliptic(point, longeraxis, shorteraxis, angle);
+            IConstructEllipticArc pEllipticArc = CreateElliptic(originPoint, centerPoint, longeraxis, shorteraxis, angle);
             pSegmentCollection1.AddSegment((ISegment)pEllipticArc, Type.Missing, Type.Missing);
 
             pthisfeature.Shape = (IGeometry)pSegmentCollection1; //赋值，把点空间要素赋值给创建的要素集
@@ -177,10 +191,11 @@ namespace SimpleForm
                 IGeometryDefEdit pGeoDefEdit = (IGeometryDefEdit)pGeoDef;
                 pGeoDefEdit.GeometryType_2 = esriGeometryType.esriGeometryPolygon;
                
-                ISpatialReferenceFactory3 pspatialRefFac = new SpatialReferenceEnvironmentClass();
-                ISpatialReference pspatialRef = pspatialRefFac.CreateGeographicCoordinateSystem((int)esriSRGeoCSType.esriSRGeoCS_WGS1984);//定义的为WGS84的空间地理坐标系
-                pspatialRef.SetDomain(-180, 180, -90, 90);//这里一定要加域值的设置！
-                pGeoDefEdit.SpatialReference_2 = pspatialRef;
+                //ISpatialReferenceFactory3 pspatialRefFac = new SpatialReferenceEnvironmentClass();
+                //ISpatialReference pspatialRef = pspatialRefFac.CreateGeographicCoordinateSystem((int)esriSRGeoCSType.esriSRGeoCS_WGS1984);//定义的为WGS84的空间地理坐标系
+                //pspatialRef.SetDomain(-180, 180, -90, 90);//这里一定要加域值的设置！
+                pspatialreference.SetDomain(-180, 180, -90, 90);
+                pGeoDefEdit.SpatialReference_2 = pspatialreference;
 
                 //设置字段集
                 IFields pFields = new FieldsClass();
@@ -237,52 +252,25 @@ namespace SimpleForm
             //pMap.SelectByShape(pEnv, null, false);
             //pActiveView.Refresh();
 
-            DataSet ds = new DataSet("dsTest");
-            DataTable dt = new DataTable(pLayer.Name);
-            DataColumn dc = null;
-
             pIDArray = pIdentify.Identify(pEnv);
             if (pIDArray != null)
             {
-                DataRow dr = dt.NewRow();
                 for (int i = 0; i < pIDArray.Count; i++)
                 {
-                    Console.WriteLine("---");
-                    Console.WriteLine((IFeatureIdentifyObj)pIDArray.get_Element(0));
                     pFeatIdObj = (IFeatureIdentifyObj)pIDArray.get_Element(i);
                     pIdObj = (IIdentifyObj)pFeatIdObj;
-
                     IRowIdentifyObject pRowObj = pFeatIdObj as IRowIdentifyObject;
-                    
                     IFeature pFeature = pRowObj.Row as IFeature;
 
-                    unqiueRender(pFeature, pLayer as IGeoFeatureLayer);
+                    labelName.Text = pFeature.get_Value(3).ToString();
+                    labelX.Text = pFeature.get_Value(4).ToString();
+                    labelY.Text = pFeature.get_Value(5).ToString();
 
-                    if (pFeature != null)
-                    {
-                        for (int k = 0; k < pFeature.Table.Fields.FieldCount; k++)
-                        {
-                            dc = new DataColumn(pFeature.Table.Fields.get_Field(k).Name.ToString());
-                            dt.Columns.Add(dc);
-                            dc = null;
-                        }
-                        for (int j = 0; j < pFeature.Table.Fields.FieldCount; j++)
-                        {
-                            dr[j] = pFeature.get_Value(j).ToString();
-                        }
-                        dt.Rows.Add(dr);
-                        ds.Tables.Add(dt);
-                        dataGridView1.DataSource = ds.Tables[pLayer.Name];
-                    }
+                    unqiueRender(pFeature, pLayer as IGeoFeatureLayer);
                 }
                 pEnv = null;
 
             }
-            //else
-            //{
-            //    dataGridView1.DataSource = null;
-            //    MessageBox.Show("no feature is selected!");
-            //}
             
         }
 
@@ -304,7 +292,7 @@ namespace SimpleForm
             simpleMarkerSymbol.Outline = true;
             simpleMarkerSymbol.OutlineColor = getRGB(0, 0, 0);
             simpleMarkerSymbol.Color = getRGB(0, 94, 76);
-            simpleMarkerSymbol.Size = 30;
+            simpleMarkerSymbol.Size = 10;
             simpleMarkerSymbol.Style = esriSimpleMarkerStyle.esriSMSDiamond;
 
             uniqueValueRenderer.AddValue(feature.get_Value(0).ToString(), "FID", simpleMarkerSymbol as ISymbol);
@@ -313,6 +301,5 @@ namespace SimpleForm
             axMapControl1.ActiveView.Refresh();
         }
 
-        
     }
 }
