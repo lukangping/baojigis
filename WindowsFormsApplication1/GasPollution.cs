@@ -92,7 +92,13 @@ namespace SimpleForm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            if (axMapControl1.LayerCount > 2)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    axMapControl1.DeleteLayer(0);
+                }
+            }
             double originX = double.Parse(labelX.Text);
             double originY = double.Parse(labelY.Text);
             IPoint originPoint = constructPoint(originX, originY);
@@ -102,11 +108,18 @@ namespace SimpleForm
             IPoint centerPoint3 = constructPoint(originX -2 + 0.6, originY);
             IPoint centerPoint4 = constructPoint(originX -2 + 1.2, originY);
 
-            CreateVehicleFeature("gas1", originPoint, centerPoint1, 2, 1, 1);
-            CreateVehicleFeature("gas2", originPoint, centerPoint2, 1.75, 0.75, 1);
-            CreateVehicleFeature("gas3", originPoint, centerPoint3, 1.25, 0.5, 1);
-            CreateVehicleFeature("gas4", originPoint, centerPoint4, 0.5, 0.25, 1);
+            
 
+            double angle=0;
+            if(comboBox1.Text=="西南")
+            {
+                angle =1;
+            }
+
+            CreateVehicleFeature("gas1", originPoint, centerPoint1, 2, 1, angle);
+            CreateVehicleFeature("gas2", originPoint, centerPoint2, 1.75, 0.75, angle);
+            CreateVehicleFeature("gas3", originPoint, centerPoint3, 1.25, 0.5, angle);
+            CreateVehicleFeature("gas4", originPoint, centerPoint4, 0.5, 0.25, angle);
 
         }
 
@@ -246,6 +259,7 @@ namespace SimpleForm
                 r.top = e.y - 5;
                 r.left = e.x - 5;
                 r.right = e.x + 5;
+
                 pActiveView.ScreenDisplay.DisplayTransformation.TransformRect(pEnv, ref r, 4);
                 pEnv.SpatialReference = pActiveView.FocusMap.SpatialReference;
             }
@@ -265,6 +279,7 @@ namespace SimpleForm
                     labelName.Text = pFeature.get_Value(3).ToString();
                     labelX.Text = pFeature.get_Value(4).ToString();
                     labelY.Text = pFeature.get_Value(5).ToString();
+                    button1.Enabled = true;
 
                     unqiueRender(pFeature, pLayer as IGeoFeatureLayer);
                 }

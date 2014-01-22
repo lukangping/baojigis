@@ -45,7 +45,6 @@ namespace SimpleForm
         {
             foreach (Form childForm in this.MdiChildren)
             {
-                Console.WriteLine(childForm.Name);
                 if (childForm.Name == "GasPollution")
                 {
                     Console.WriteLine("no new.");
@@ -56,7 +55,6 @@ namespace SimpleForm
 
             }
 
-            Console.WriteLine("new");
             GasPollution gasPollutionForm = new GasPollution();
             // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
             gasPollutionForm.MdiParent = this;
@@ -69,7 +67,6 @@ namespace SimpleForm
         {
             foreach (Form childForm in this.MdiChildren)
             {
-                Console.WriteLine(childForm.Name);
                 if (childForm.Name == "MapOperation")
                 {
                     Console.WriteLine("no new.");
@@ -80,13 +77,40 @@ namespace SimpleForm
 
             }
 
-            Console.WriteLine("new");
             MapOperation mapOperationForm = new MapOperation();
             // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
             mapOperationForm.MdiParent = this;
             mapOperationForm.WindowState = FormWindowState.Maximized;
             mapOperationForm.Name = "MapOperation";
             mapOperationForm.Show();
+        }
+
+        private void menuManageEnterprise_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void 企业录入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm.Name == "EnterpriseManagement")
+                {
+                    Console.WriteLine("no new.");
+                    childForm.Visible = true;
+                    childForm.Activate();
+                    return;
+                }
+
+            }
+
+            EnterpriseManagement enterpriseManagement = new EnterpriseManagement();
+
+            // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
+            enterpriseManagement.MdiParent = this;
+            enterpriseManagement.WindowState = FormWindowState.Maximized;
+            enterpriseManagement.Name = "EnterpriseManagement";
+            enterpriseManagement.Show();
         }
     }
 }

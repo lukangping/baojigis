@@ -1,4 +1,3 @@
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.exe.config
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.exe
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\baojigis.pdb
@@ -6,10 +5,13 @@ D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Dev
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\DevComponents.DotNetBar.Schedule.dll
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\DevComponents.DotNetBar.SuperGrid.dll
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\DevComponents.DotNetBar2.dll
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.EnterpriseManagement.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.GasPollution.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.MainForm.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MapOperation.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Program.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.Properties.Resources.resources
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.exe
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.pdb

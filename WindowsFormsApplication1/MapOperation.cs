@@ -227,7 +227,174 @@ namespace WindowsFormsApplication1
             newMDIChild.Show();
         }
 
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
 
+        }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void axMapControl1_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
+        {
+            IArray pIDArray;
+            IFeatureIdentifyObj pFeatIdObj;
+            IIdentifyObj pIdObj;
+
+            IFeatureLayer pLayer = axMapControl1.get_Layer(0) as IFeatureLayer;
+            IIdentify pIdentify;
+            pIdentify = (IIdentify)axMapControl1.get_Layer(0);
+            IEnvelope pEnv;
+            IActiveView pActiveView = axMapControl1.ActiveView;
+            IMap pMap = axMapControl1.Map;
+            pEnv = axMapControl1.TrackRectangle();
+
+            IFeatureClass pFC = pLayer.FeatureClass;
+            pLayer.Name = pFC.AliasName;
+            ILayerFields pLayerFields = pLayer as ILayerFields;
+
+            if (pEnv.IsEmpty == true)
+            {
+                tagRECT r;
+                r.bottom = e.y + 5;
+                r.top = e.y - 5;
+                r.left = e.x - 5;
+                r.right = e.x + 5;
+                pActiveView.ScreenDisplay.DisplayTransformation.TransformRect(pEnv, ref r, 4);
+                pEnv.SpatialReference = pActiveView.FocusMap.SpatialReference;
+            }
+            //pMap.SelectByShape(pEnv, null, false);
+            //pActiveView.Refresh();
+
+            pIDArray = pIdentify.Identify(pEnv);
+            if (pIDArray != null)
+            {
+                for (int i = 0; i < pIDArray.Count; i++)
+                {
+                    pFeatIdObj = (IFeatureIdentifyObj)pIDArray.get_Element(i);
+                    pIdObj = (IIdentifyObj)pFeatIdObj;
+                    IRowIdentifyObject pRowObj = pFeatIdObj as IRowIdentifyObject;
+                    IFeature pFeature = pRowObj.Row as IFeature;
+
+                    //弹出气泡
+                    axMapControl1.ActiveView.GraphicsContainer.DeleteAllElements();
+                    ITextElement te = createTextElement(e.mapX, e.mapY, pFeature.get_Value(3).ToString());
+                    axMapControl1.ActiveView.GraphicsContainer.AddElement(te as IElement, 0);
+                    axMapControl1.Refresh(esriViewDrawPhase.esriViewGraphics, null, null);
+                    
+                    unqiueRender(pFeature, pLayer as IGeoFeatureLayer);
+                }
+                pEnv = null;
+
+            }
+        }
+
+        private IBalloonCallout createBalloonCallout(double x, double y)
+        {
+            IRgbColor rgb = new RgbColorClass();
+            {
+                rgb.Red = 255;
+                rgb.Green = 255;
+                rgb.Blue = 255;
+
+            }
+            ISimpleFillSymbol sfs = new SimpleFillSymbolClass();
+            {
+                sfs.Color = rgb;
+                sfs.Style = esriSimpleFillStyle.esriSFSSolid;
+            }
+
+            IPoint p = new PointClass();
+            {
+                p.PutCoords(x, y);
+            }
+
+            IBalloonCallout bc = new BalloonCalloutClass();
+            {
+                bc.Style = esriBalloonCalloutStyle.esriBCSRoundedRectangle;
+                bc.Symbol = sfs;
+                bc.LeaderTolerance = 5;
+                bc.AnchorPoint = p;
+            }
+
+            return bc;
+        }
+
+        public ITextElement createTextElement(double x, double y, string text)
+        {
+            IBalloonCallout bc = createBalloonCallout(x, y);
+
+            IRgbColor rgb = new RgbColorClass();
+            {
+                rgb.Blue = 105;
+                rgb.Red = 105;
+                rgb.Green = 105;
+            }
+            ITextSymbol ts = new TextSymbolClass();
+            {
+                ts.Color = rgb;
+            }
+
+            IFormattedTextSymbol fts = ts as IFormattedTextSymbol;
+            {
+                fts.Background = bc as ITextBackground;
+            }
+            ts.Size = 9;
+
+            IPoint point = new PointClass();
+            {
+                double width = axMapControl1.Extent.Width / 18;
+                double height = axMapControl1.Extent.Height / 36;
+                point.PutCoords(x + width, y + height);
+            }
+
+            ITextElement te = new TextElementClass();
+            {
+                te.Symbol = ts;
+                te.Text = text;
+            }
+
+            IElement e = te as IElement;
+            {
+                e.Geometry = point;
+            }
+            return te;
+
+        }
+
+        public void unqiueRender(IFeature feature, IGeoFeatureLayer layer)
+        {
+            IUniqueValueRenderer uniqueValueRenderer = new UniqueValueRendererClass();
+            uniqueValueRenderer.FieldCount = 1;
+            uniqueValueRenderer.set_Field(0, "FID");
+
+            ISimpleMarkerSymbol simpleMarkerSymbol1 = new SimpleMarkerSymbolClass();
+            simpleMarkerSymbol1.Outline = false;
+            simpleMarkerSymbol1.Color = getRGB(0, 168, 132);
+            simpleMarkerSymbol1.Size = 10;
+            simpleMarkerSymbol1.Style = esriSimpleMarkerStyle.esriSMSDiamond;
+            uniqueValueRenderer.DefaultSymbol = simpleMarkerSymbol1 as ISymbol;
+            uniqueValueRenderer.UseDefaultSymbol = true;
+
+            ISimpleMarkerSymbol simpleMarkerSymbol = new SimpleMarkerSymbolClass();
+            simpleMarkerSymbol.Outline = true;
+            simpleMarkerSymbol.OutlineColor = getRGB(0, 0, 0);
+            simpleMarkerSymbol.Color = getRGB(0, 94, 76);
+            simpleMarkerSymbol.Size = 10;
+            simpleMarkerSymbol.Style = esriSimpleMarkerStyle.esriSMSDiamond;
+
+            uniqueValueRenderer.AddValue(feature.get_Value(0).ToString(), "FID", simpleMarkerSymbol as ISymbol);
+            layer.Renderer = uniqueValueRenderer as IFeatureRenderer;
+
+            axMapControl1.ActiveView.Refresh();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
