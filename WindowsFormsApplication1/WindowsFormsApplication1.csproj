@@ -125,12 +125,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\D_CorpBaseInfo.cs" />
     <Compile Include="EnterpriseManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EnterpriseManagement.Designer.cs">
       <DependentUpon>EnterpriseManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\E_CorpBaseInfo.cs" />
     <Compile Include="GasPollution.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +210,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuUseMap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageEnterprise = new System.Windows.Forms.ToolStripMenuItem();
+            this.企业录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.环评记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInquire = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGasAnalyse = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWaterAnalyse = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,9 +41,6 @@
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.企业录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.企业编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.环评记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,12 +73,24 @@
             // 
             this.menuManageEnterprise.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.企业录入ToolStripMenuItem,
-            this.企业编辑ToolStripMenuItem,
             this.环评记录ToolStripMenuItem});
             this.menuManageEnterprise.Name = "menuManageEnterprise";
             this.menuManageEnterprise.Size = new System.Drawing.Size(67, 20);
             this.menuManageEnterprise.Text = "企业管理";
             this.menuManageEnterprise.Click += new System.EventHandler(this.menuManageEnterprise_Click);
+            // 
+            // 企业录入ToolStripMenuItem
+            // 
+            this.企业录入ToolStripMenuItem.Name = "企业录入ToolStripMenuItem";
+            this.企业录入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.企业录入ToolStripMenuItem.Text = "企业信息";
+            this.企业录入ToolStripMenuItem.Click += new System.EventHandler(this.企业录入ToolStripMenuItem_Click);
+            // 
+            // 环评记录ToolStripMenuItem
+            // 
+            this.环评记录ToolStripMenuItem.Name = "环评记录ToolStripMenuItem";
+            this.环评记录ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.环评记录ToolStripMenuItem.Text = "环评记录";
             // 
             // menuInquire
             // 
@@ -133,25 +144,6 @@
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.Visible = false;
             // 
-            // 企业录入ToolStripMenuItem
-            // 
-            this.企业录入ToolStripMenuItem.Name = "企业录入ToolStripMenuItem";
-            this.企业录入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.企业录入ToolStripMenuItem.Text = "企业录入";
-            this.企业录入ToolStripMenuItem.Click += new System.EventHandler(this.企业录入ToolStripMenuItem_Click);
-            // 
-            // 企业编辑ToolStripMenuItem
-            // 
-            this.企业编辑ToolStripMenuItem.Name = "企业编辑ToolStripMenuItem";
-            this.企业编辑ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.企业编辑ToolStripMenuItem.Text = "企业编辑";
-            // 
-            // 环评记录ToolStripMenuItem
-            // 
-            this.环评记录ToolStripMenuItem.Name = "环评记录ToolStripMenuItem";
-            this.环评记录ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.环评记录ToolStripMenuItem.Text = "环评记录";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -185,7 +177,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem 企业录入ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 企业编辑ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 环评记录ToolStripMenuItem;
     }
 }

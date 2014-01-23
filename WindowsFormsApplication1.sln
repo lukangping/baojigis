@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleForm", "..\SimpleForm\SimpleForm\SimpleForm.csproj", "{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvironmentSystem", "..\2014-01-23\EnvironmentSystem\EnvironmentSystem\EnvironmentSystem.csproj", "{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|Mixed Platforms.Build.0 = Release|x86
 		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|x86.ActiveCfg = Release|x86
 		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|x86.Build.0 = Release|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|x86.ActiveCfg = Debug|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|x86.Build.0 = Debug|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Release|Any CPU.ActiveCfg = Release|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Release|Mixed Platforms.Build.0 = Release|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Release|x86.ActiveCfg = Release|x86
+		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
