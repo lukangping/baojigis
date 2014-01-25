@@ -32,8 +32,6 @@
             this.menuUseMap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageEnterprise = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuPollutionEmission = new System.Windows.Forms.ToolStripMenuItem();
-            this.信息录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.编辑管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuPollutionEquipment = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuPollutionControl = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuEnvivonmentEvaluation = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,26 +87,10 @@
             // 
             // subMenuPollutionEmission
             // 
-            this.subMenuPollutionEmission.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.信息录入ToolStripMenuItem,
-            this.编辑管理ToolStripMenuItem});
             this.subMenuPollutionEmission.Name = "subMenuPollutionEmission";
             this.subMenuPollutionEmission.Size = new System.Drawing.Size(254, 22);
             this.subMenuPollutionEmission.Text = "工业企业污染排放及处理利用情况";
             this.subMenuPollutionEmission.Click += new System.EventHandler(this.subMenuPollutionEmission_Click);
-            // 
-            // 信息录入ToolStripMenuItem
-            // 
-            this.信息录入ToolStripMenuItem.Name = "信息录入ToolStripMenuItem";
-            this.信息录入ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.信息录入ToolStripMenuItem.Text = "信息录入";
-            this.信息录入ToolStripMenuItem.Click += new System.EventHandler(this.信息录入ToolStripMenuItem_Click);
-            // 
-            // 编辑管理ToolStripMenuItem
-            // 
-            this.编辑管理ToolStripMenuItem.Name = "编辑管理ToolStripMenuItem";
-            this.编辑管理ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.编辑管理ToolStripMenuItem.Text = "编辑管理";
             // 
             // subMenuPollutionEquipment
             // 
@@ -238,8 +220,6 @@
         private System.Windows.Forms.ToolStripMenuItem subMenuEnvivonmentEvaluation;
         private System.Windows.Forms.ToolStripMenuItem 基表信息查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 工业企业污染排放及处理利用情况ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 信息录入ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 编辑管理ToolStripMenuItem;
     }
 }
 

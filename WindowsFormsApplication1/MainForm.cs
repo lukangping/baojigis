@@ -93,7 +93,25 @@ namespace SimpleForm
 
         private void subMenuPollutionEmission_Click(object sender, EventArgs e)
         {
-            
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm.Name == "FormPollutionEmission")
+                {
+                    Console.WriteLine("no new.");
+                    childForm.Visible = true;
+                    childForm.Activate();
+                    return;
+                }
+
+            }
+
+            FormPollutionEmission formPollutionEmission = new FormPollutionEmission();
+
+            // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
+            formPollutionEmission.MdiParent = this;
+            formPollutionEmission.WindowState = FormWindowState.Maximized;
+            formPollutionEmission.Name = "FormPollutionEmission";
+            formPollutionEmission.Show();
         }
 
         private void subMenuPollutionControl_Click(object sender, EventArgs e)

@@ -12,14 +12,64 @@ namespace EnvironmentSystem
 {
     public partial class FormEnvironmentEvaluation : Form
     {
+
         public FormEnvironmentEvaluation()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            edoUserControl1.Open("D:\\test.doc");
+            edoUserControl1.Open("D:\\workspaces\\huanping.docx");
+            //current_file = "D:\\workspaces\\huanping.docx";
         }
+
+        private void tabPage1_Enter(object sender, EventArgs e)
+        {
+            edoUserControl1.Open("D:\\workspaces\\huanping.docx");
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            edoUserControl2.Open("D:\\workspaces\\pifu.docx");
+            //current_file = "D:\\workspaces\\pifu.docx";
+        }
+
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {
+            edoUserControl3.Open("D:\\workspaces\\yanshou.docx");
+            //current_file = "D:\\workspaces\\yanshou.docx";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            edoUserControl1.Print();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            edoUserControl2.Print();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            edoUserControl3.Print();
+        }
+
+        private void tabPage1_Leave(object sender, EventArgs e)
+        {
+            //edoUserControl1.Close();
+        }
+
+        private void tabPage2_Leave(object sender, EventArgs e)
+        {
+            //edoUserControl2.Close();
+        }
+
+        private void tabPage3_Leave(object sender, EventArgs e)
+        {
+            //edoUserControl3.Close();
+        }
+       
     }
 }

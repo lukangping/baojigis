@@ -142,12 +142,6 @@
     <Compile Include="EdoUserControl.Designer.cs">
       <DependentUpon>EdoUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="EnterpriseManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EnterpriseManagement.Designer.cs">
-      <DependentUpon>EnterpriseManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="Entity\E_CorpBaseInfo.cs" />
     <Compile Include="FormEnvironmentEvaluation.cs">
       <SubType>Form</SubType>
@@ -201,9 +195,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EdoUserControl.resx">
       <DependentUpon>EdoUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EnterpriseManagement.resx">
-      <DependentUpon>EnterpriseManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEnvironmentEvaluation.resx">
       <DependentUpon>FormEnvironmentEvaluation.cs</DependentUpon>
