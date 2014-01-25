@@ -133,6 +133,39 @@
       <DependentUpon>EnterpriseManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\E_CorpBaseInfo.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQueryPollutionEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQueryPollutionEmission.Designer.cs">
+      <DependentUpon>FormQueryPollutionEmission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPollutionEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPollutionEquipment.Designer.cs">
+      <DependentUpon>FormPollutionEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPollutionControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPollutionControl.Designer.cs">
+      <DependentUpon>FormPollutionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPollutionEmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPollutionEmission.Designer.cs">
+      <DependentUpon>FormPollutionEmission.cs</DependentUpon>
+    </Compile>
     <Compile Include="GasPollution.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +188,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EnterpriseManagement.resx">
       <DependentUpon>EnterpriseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPollutionControl.resx">
+      <DependentUpon>FormPollutionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPollutionEmission.resx">
+      <DependentUpon>FormPollutionEmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPollutionEquipment.resx">
+      <DependentUpon>FormPollutionEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQueryPollutionEmission.resx">
+      <DependentUpon>FormQueryPollutionEmission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GasPollution.resx">
       <DependentUpon>GasPollution.cs</DependentUpon>

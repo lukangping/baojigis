@@ -10,7 +10,7 @@ using WindowsFormsApplication1;
 
 namespace SimpleForm
 {
-    public partial class MainForm : Form
+    public partial class MainForm :Form
     {
         public MainForm()
         {
@@ -90,11 +90,11 @@ namespace SimpleForm
            
         }
 
-        private void 企业录入ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void subMenuPollutionEmission_Click(object sender, EventArgs e)
         {
             foreach (Form childForm in this.MdiChildren)
             {
-                if (childForm.Name == "EnterpriseManagement")
+                if (childForm.Name == "FormPollutionEmission")
                 {
                     Console.WriteLine("no new.");
                     childForm.Visible = true;
@@ -104,13 +104,85 @@ namespace SimpleForm
 
             }
 
-            EnterpriseManagement enterpriseManagement = new EnterpriseManagement();
+            FormPollutionEmission formPollutionEmission = new FormPollutionEmission();
 
             // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
-            enterpriseManagement.MdiParent = this;
-            enterpriseManagement.WindowState = FormWindowState.Maximized;
-            enterpriseManagement.Name = "EnterpriseManagement";
-            enterpriseManagement.Show();
+            formPollutionEmission.MdiParent = this;
+            formPollutionEmission.WindowState = FormWindowState.Maximized;
+            formPollutionEmission.Name = "FormPollutionEmission";
+            formPollutionEmission.Show();
         }
+
+        private void subMenuPollutionControl_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm.Name == "FormPollutionControl")
+                {
+                    Console.WriteLine("no new.");
+                    childForm.Visible = true;
+                    childForm.Activate();
+                    return;
+                }
+
+            }
+
+            FormPollutionControl formPollutionControl = new FormPollutionControl();
+
+            // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
+            formPollutionControl.MdiParent = this;
+            formPollutionControl.WindowState = FormWindowState.Maximized;
+            formPollutionControl.Name = "FormPollutionControl";
+            formPollutionControl.Show();
+        }
+
+        private void subMenuPollutionEquipment_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm.Name == "FormPollutionEquipment")
+                {
+                    Console.WriteLine("no new.");
+                    childForm.Visible = true;
+                    childForm.Activate();
+                    return;
+                }
+
+            }
+
+            FormPollutionEquipment formPollutionEquipment = new FormPollutionEquipment();
+
+            // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
+            formPollutionEquipment.MdiParent = this;
+            formPollutionEquipment.WindowState = FormWindowState.Maximized;
+            formPollutionEquipment.Name = "FormPollutionEquipment";
+            formPollutionEquipment.Show();
+        }
+
+        private void 工业企业污染排放及处理利用情况ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm.Name == "FormQueryPollutionEmission")
+                {
+                    Console.WriteLine("no new.");
+                    childForm.Visible = true;
+                    childForm.Activate();
+                    return;
+                }
+
+            }
+
+            FormQueryPollutionEmission formQueryPollutionEmission = new FormQueryPollutionEmission();
+
+            // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
+            formQueryPollutionEmission.MdiParent = this;
+            formQueryPollutionEmission.WindowState = FormWindowState.Maximized;
+            formQueryPollutionEmission.Name = "FormQueryPollutionEmission";
+            formQueryPollutionEmission
+                .Show();
+        }
+
+        
     }
 }

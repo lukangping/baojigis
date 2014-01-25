@@ -31,9 +31,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuUseMap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageEnterprise = new System.Windows.Forms.ToolStripMenuItem();
-            this.企业录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.环评记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuPollutionEmission = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuPollutionEquipment = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuPollutionControl = new System.Windows.Forms.ToolStripMenuItem();
+            this.工业企业环评记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInquire = new System.Windows.Forms.ToolStripMenuItem();
+            this.基表信息查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.工业企业污染排放及处理利用情况ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGasAnalyse = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWaterAnalyse = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageUser = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,31 +76,64 @@
             // menuManageEnterprise
             // 
             this.menuManageEnterprise.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.企业录入ToolStripMenuItem,
-            this.环评记录ToolStripMenuItem});
+            this.subMenuPollutionEmission,
+            this.subMenuPollutionEquipment,
+            this.subMenuPollutionControl,
+            this.工业企业环评记录ToolStripMenuItem});
             this.menuManageEnterprise.Name = "menuManageEnterprise";
             this.menuManageEnterprise.Size = new System.Drawing.Size(67, 20);
             this.menuManageEnterprise.Text = "企业管理";
             this.menuManageEnterprise.Click += new System.EventHandler(this.menuManageEnterprise_Click);
             // 
-            // 企业录入ToolStripMenuItem
+            // subMenuPollutionEmission
             // 
-            this.企业录入ToolStripMenuItem.Name = "企业录入ToolStripMenuItem";
-            this.企业录入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.企业录入ToolStripMenuItem.Text = "企业信息";
-            this.企业录入ToolStripMenuItem.Click += new System.EventHandler(this.企业录入ToolStripMenuItem_Click);
+            this.subMenuPollutionEmission.Name = "subMenuPollutionEmission";
+            this.subMenuPollutionEmission.Size = new System.Drawing.Size(254, 22);
+            this.subMenuPollutionEmission.Text = "工业企业污染排放及处理利用情况";
+            this.subMenuPollutionEmission.Click += new System.EventHandler(this.subMenuPollutionEmission_Click);
             // 
-            // 环评记录ToolStripMenuItem
+            // subMenuPollutionEquipment
             // 
-            this.环评记录ToolStripMenuItem.Name = "环评记录ToolStripMenuItem";
-            this.环评记录ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.环评记录ToolStripMenuItem.Text = "环评记录";
+            this.subMenuPollutionEquipment.Name = "subMenuPollutionEquipment";
+            this.subMenuPollutionEquipment.Size = new System.Drawing.Size(254, 22);
+            this.subMenuPollutionEquipment.Text = "工业企业处理设施信息";
+            this.subMenuPollutionEquipment.Click += new System.EventHandler(this.subMenuPollutionEquipment_Click);
+            // 
+            // subMenuPollutionControl
+            // 
+            this.subMenuPollutionControl.Name = "subMenuPollutionControl";
+            this.subMenuPollutionControl.Size = new System.Drawing.Size(254, 22);
+            this.subMenuPollutionControl.Text = "工业企业污染治理项目建设情况";
+            this.subMenuPollutionControl.Click += new System.EventHandler(this.subMenuPollutionControl_Click);
+            // 
+            // 工业企业环评记录ToolStripMenuItem
+            // 
+            this.工业企业环评记录ToolStripMenuItem.Name = "工业企业环评记录ToolStripMenuItem";
+            this.工业企业环评记录ToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.工业企业环评记录ToolStripMenuItem.Text = "工业企业环评记录";
             // 
             // menuInquire
             // 
+            this.menuInquire.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.基表信息查询ToolStripMenuItem});
             this.menuInquire.Name = "menuInquire";
             this.menuInquire.Size = new System.Drawing.Size(67, 20);
             this.menuInquire.Text = "信息查询";
+            // 
+            // 基表信息查询ToolStripMenuItem
+            // 
+            this.基表信息查询ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.工业企业污染排放及处理利用情况ToolStripMenuItem});
+            this.基表信息查询ToolStripMenuItem.Name = "基表信息查询ToolStripMenuItem";
+            this.基表信息查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.基表信息查询ToolStripMenuItem.Text = "基表信息查询";
+            // 
+            // 工业企业污染排放及处理利用情况ToolStripMenuItem
+            // 
+            this.工业企业污染排放及处理利用情况ToolStripMenuItem.Name = "工业企业污染排放及处理利用情况ToolStripMenuItem";
+            this.工业企业污染排放及处理利用情况ToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.工业企业污染排放及处理利用情况ToolStripMenuItem.Text = "工业企业污染排放及处理利用情况";
+            this.工业企业污染排放及处理利用情况ToolStripMenuItem.Click += new System.EventHandler(this.工业企业污染排放及处理利用情况ToolStripMenuItem_Click);
             // 
             // menuGasAnalyse
             // 
@@ -148,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 643);
+            this.ClientSize = new System.Drawing.Size(961, 760);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.IsMdiContainer = true;
@@ -176,8 +213,12 @@
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem 企业录入ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 环评记录ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subMenuPollutionEquipment;
+        private System.Windows.Forms.ToolStripMenuItem subMenuPollutionControl;
+        private System.Windows.Forms.ToolStripMenuItem subMenuPollutionEmission;
+        private System.Windows.Forms.ToolStripMenuItem 工业企业环评记录ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 基表信息查询ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 工业企业污染排放及处理利用情况ToolStripMenuItem;
     }
 }
 

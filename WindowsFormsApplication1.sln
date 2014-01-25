@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{C31EFB1A-A8DE-402F-BF88-727ED1691A37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleForm", "..\SimpleForm\SimpleForm\SimpleForm.csproj", "{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvironmentSystem", "..\2014-01-23\EnvironmentSystem\EnvironmentSystem\EnvironmentSystem.csproj", "{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}"
 EndProject
 Global
@@ -27,16 +25,6 @@ Global
 		{C31EFB1A-A8DE-402F-BF88-727ED1691A37}.Release|Mixed Platforms.Build.0 = Release|x86
 		{C31EFB1A-A8DE-402F-BF88-727ED1691A37}.Release|x86.ActiveCfg = Release|x86
 		{C31EFB1A-A8DE-402F-BF88-727ED1691A37}.Release|x86.Build.0 = Release|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Debug|x86.ActiveCfg = Debug|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Debug|x86.Build.0 = Debug|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|Any CPU.ActiveCfg = Release|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|Mixed Platforms.Build.0 = Release|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|x86.ActiveCfg = Release|x86
-		{3D44C0EA-837B-4722-A364-6EB59DEBDFBB}.Release|x86.Build.0 = Release|x86
 		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{ACA29AB9-D4E8-4281-B2C2-8EAEF66D1FEE}.Debug|Mixed Platforms.Build.0 = Debug|x86

@@ -12,7 +12,7 @@ using EnvironmentSystem.DataAccess;
 
 namespace SimpleForm
 {
-    public partial class EnterpriseManagement : Form
+    public partial class EnterpriseManagement:Form
     {
         public EnterpriseManagement()
         {
@@ -87,6 +87,11 @@ namespace SimpleForm
             {
                 MessageBox.Show("添加失败！");
             }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

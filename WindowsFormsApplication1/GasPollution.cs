@@ -19,7 +19,7 @@ using ESRI.ArcGIS.DataSourcesGDB;
 
 namespace SimpleForm
 {
-    public partial class GasPollution : Form
+    public partial class GasPollution:Form
     {
 
         string folder = "D:\\projects\\2014_baojigis\\shp_shanxi";
