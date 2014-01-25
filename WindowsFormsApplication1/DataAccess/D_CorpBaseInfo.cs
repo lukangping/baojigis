@@ -82,5 +82,30 @@ namespace EnvironmentSystem.DataAccess
             
             return corps;
         }
-    }
+
+        public DataTable queryAll()
+        {
+            OleDbConnection conn = new OleDbConnection();
+            conn.ConnectionString = connectionString;
+
+            OleDbCommand command = new OleDbCommand(@"select * from corpbaseinfo", conn);
+
+            conn.Open();
+            //OleDbDataReader reader = command.ExecuteReader();
+            //while(reader.Read())
+            //{
+            //    Console.WriteLine(reader["CorpDetailName"]);
+            //}
+            //reader.Close();
+            OleDbDataAdapter da = new OleDbDataAdapter(command);
+            DataTable result = new DataTable();
+
+            da.Fill(result);
+
+            conn.Close();
+
+            return result;
+        }
+
+      }
 }

@@ -221,6 +221,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.TxtEnvironFax);
             this.splitContainer1.Panel1.Controls.Add(this.TxtPostalCode);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(947, 591);
             this.splitContainer1.SplitterDistance = 300;
             this.splitContainer1.TabIndex = 84;
@@ -1153,7 +1154,6 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "EnterpriseManagement";
             this.Text = "EnterpriseManagement";
-            this.Controls.SetChildIndex(this.tabControl1, 0);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);

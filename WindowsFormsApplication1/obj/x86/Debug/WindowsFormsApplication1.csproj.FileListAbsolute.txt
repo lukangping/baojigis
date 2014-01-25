@@ -1,5 +1,4 @@
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.EnterpriseManagement.resources
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.FormPollutionControl.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.FormPollutionEmission.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.FormPollutionEquipment.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.FormQueryPollutionEmission.resources
@@ -20,3 +19,4 @@ D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.exe
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.pdb
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\EnvironmentSystem.Form1.resources
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.FormPollutionDispose.resources

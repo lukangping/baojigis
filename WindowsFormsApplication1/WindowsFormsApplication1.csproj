@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\D_CorpBaseInfo.cs" />
+    <Compile Include="DataAccess\D_PollutionDisposeInfo.cs" />
     <Compile Include="EnterpriseManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,11 +155,11 @@
     <Compile Include="FormPollutionEquipment.Designer.cs">
       <DependentUpon>FormPollutionEquipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPollutionControl.cs">
+    <Compile Include="FormPollutionDispose.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPollutionControl.Designer.cs">
-      <DependentUpon>FormPollutionControl.cs</DependentUpon>
+    <Compile Include="FormPollutionDispose.Designer.cs">
+      <DependentUpon>FormPollutionDispose.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPollutionEmission.cs">
       <SubType>Form</SubType>
@@ -192,8 +193,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPollutionControl.resx">
-      <DependentUpon>FormPollutionControl.cs</DependentUpon>
+    <EmbeddedResource Include="FormPollutionDispose.resx">
+      <DependentUpon>FormPollutionDispose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPollutionEmission.resx">
       <DependentUpon>FormPollutionEmission.cs</DependentUpon>

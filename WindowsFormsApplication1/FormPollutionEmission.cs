@@ -25,5 +25,35 @@ namespace SimpleForm
         {
 
         }
+
+        private void TxtFaRenID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("添加成功");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("添加成功");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("添加成功");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("添加成功");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("添加成功");
+        }
     }
 }
