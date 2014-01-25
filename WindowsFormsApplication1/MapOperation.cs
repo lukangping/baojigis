@@ -396,5 +396,10 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void axToolbarControl1_OnMouseDown(object sender, IToolbarControlEvents_OnMouseDownEvent e)
+        {
+
+        }
+
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
+using EnvironmentSystem;
 
 namespace SimpleForm
 {
@@ -186,6 +187,29 @@ namespace SimpleForm
             formPollutionEmission.WindowState = FormWindowState.Maximized;
             formPollutionEmission.Name = "FormPollutionEmission";
             formPollutionEmission.Show();
+        }
+
+        private void subMenuEnvivonmentEvaluation_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm.Name == "FormEnvironmentEvaluation")
+                {
+                    Console.WriteLine("no new.");
+                    childForm.Visible = true;
+                    childForm.Activate();
+                    return;
+                }
+
+            }
+
+            FormEnvironmentEvaluation formEnvironmentEvaluation = new FormEnvironmentEvaluation();
+
+            // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
+            formEnvironmentEvaluation.MdiParent = this;
+            formEnvironmentEvaluation.WindowState = FormWindowState.Maximized;
+            formEnvironmentEvaluation.Name = "FormEnvironmentEvaluation";
+            formEnvironmentEvaluation.Show();
         }
 
         

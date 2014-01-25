@@ -49,6 +49,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxDSOFramer">
+      <HintPath>..\..\TestSolution\officeviewer 6.0\AxDSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.OfficeViewer, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AxInterop.OfficeViewer.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.DotNetBar.Keyboard">
       <HintPath>dll\DevComponents.DotNetBar.Keyboard.dll</HintPath>
     </Reference>
@@ -111,7 +118,9 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC\stdole\7.0.3300.0__b03f5f7f11d50a3a\stdole.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -127,6 +136,12 @@
   <ItemGroup>
     <Compile Include="DataAccess\D_CorpBaseInfo.cs" />
     <Compile Include="DataAccess\D_PollutionDisposeInfo.cs" />
+    <Compile Include="EdoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EdoUserControl.Designer.cs">
+      <DependentUpon>EdoUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnterpriseManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +149,17 @@
       <DependentUpon>EnterpriseManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\E_CorpBaseInfo.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Form10.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form10.Designer.cs">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEnvironmentEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnvironmentEvaluation.Designer.cs">
+      <DependentUpon>FormEnvironmentEvaluation.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWater.cs">
       <SubType>Form</SubType>
@@ -187,11 +208,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WordForm.Designer.cs">
+      <DependentUpon>WordForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EdoUserControl.resx">
+      <DependentUpon>EdoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnterpriseManagement.resx">
       <DependentUpon>EnterpriseManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form10.resx">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEnvironmentEvaluation.resx">
+      <DependentUpon>FormEnvironmentEvaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPollutionDispose.resx">
       <DependentUpon>FormPollutionDispose.cs</DependentUpon>
@@ -227,6 +260,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WordForm.resx">
+      <DependentUpon>WordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -262,6 +298,38 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="LCC11">
+      <Guid>{EDCD5812-6A06-43C3-AFAC-46EF5D14E22C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
