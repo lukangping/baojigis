@@ -19,25 +19,7 @@ namespace EnvironmentSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            WordForm wf = new WordForm();
-            wf.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog of = new OpenFileDialog();
-            of.ShowDialog();
-            txtPath1.Text = of.FileName;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            edoUserControl1.Open(txtPath1.Text);
+            edoUserControl1.Open("D:\\test.doc");
         }
     }
 }

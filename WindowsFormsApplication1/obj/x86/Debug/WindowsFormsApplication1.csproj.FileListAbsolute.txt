@@ -21,10 +21,8 @@ D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MapOperation.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Program.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.Properties.Resources.resources
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\TestWF.WordForm.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.exe
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.pdb
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Interop.OfficeViewer.dll
-D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\TestWF.Form10.resources
