@@ -13,7 +13,7 @@ namespace EnvironmentSystem.DataAccess
     class D_PollutionDisposeInfo
     {
 
-        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\workspaces\\vs\\WindowsFormsApplication1\\EnvironmentDB.accdb";
+        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\\dbfiles\\EnvironmentDB.accdb";
 
         public DataTable queryAll()
         {

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class MapOperation
+    partial class FormMapOperation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapOperation));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMapOperation));
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.splitContainerLeft = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitcontainerMain = new System.Windows.Forms.SplitContainer();
             this.axMapControl2 = new ESRI.ArcGIS.Controls.AxMapControl();
+            this.splitcontainerMain = new System.Windows.Forms.SplitContainer();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
@@ -48,11 +48,11 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitcontainerMain)).BeginInit();
             this.splitcontainerMain.Panel1.SuspendLayout();
             this.splitcontainerMain.Panel2.SuspendLayout();
             this.splitcontainerMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             this.SuspendLayout();
@@ -145,6 +145,17 @@
             this.splitContainer2.SplitterDistance = 51;
             this.splitContainer2.TabIndex = 0;
             // 
+            // axMapControl2
+            // 
+            this.axMapControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axMapControl2.Location = new System.Drawing.Point(0, 0);
+            this.axMapControl2.Name = "axMapControl2";
+            this.axMapControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl2.OcxState")));
+            this.axMapControl2.Size = new System.Drawing.Size(277, 245);
+            this.axMapControl2.TabIndex = 7;
+            this.axMapControl2.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl2_OnMouseDown);
+            this.axMapControl2.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.axMapControl2_OnMouseMove);
+            // 
             // splitcontainerMain
             // 
             this.splitcontainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -161,17 +172,6 @@
             this.splitcontainerMain.Size = new System.Drawing.Size(938, 600);
             this.splitcontainerMain.SplitterDistance = 277;
             this.splitcontainerMain.TabIndex = 10;
-            // 
-            // axMapControl2
-            // 
-            this.axMapControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axMapControl2.Location = new System.Drawing.Point(0, 0);
-            this.axMapControl2.Name = "axMapControl2";
-            this.axMapControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl2.OcxState")));
-            this.axMapControl2.Size = new System.Drawing.Size(277, 245);
-            this.axMapControl2.TabIndex = 7;
-            this.axMapControl2.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl2_OnMouseDown);
-            this.axMapControl2.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.axMapControl2_OnMouseMove);
             // 
             // axMapControl1
             // 
@@ -194,7 +194,7 @@
             this.axToolbarControl1.TabIndex = 0;
             this.axToolbarControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IToolbarControlEvents_Ax_OnMouseDownEventHandler(this.axToolbarControl1_OnMouseDown);
             // 
-            // MapOperation
+            // FormMapOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,8 +202,8 @@
             this.Controls.Add(this.splitcontainerMain);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axToolbarControl1);
-            this.Name = "MapOperation";
-            this.Text = "MapOperation";
+            this.Name = "FormMapOperation";
+            this.Text = "FormMapOperation";
             this.Load += new System.EventHandler(this.mapOperation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             this.splitContainerLeft.Panel1.ResumeLayout(false);
@@ -215,11 +215,11 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).EndInit();
             this.splitcontainerMain.Panel1.ResumeLayout(false);
             this.splitcontainerMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitcontainerMain)).EndInit();
             this.splitcontainerMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
             this.ResumeLayout(false);

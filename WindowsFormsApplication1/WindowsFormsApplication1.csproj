@@ -173,11 +173,11 @@
     <Compile Include="FormPollutionEmission.Designer.cs">
       <DependentUpon>FormPollutionEmission.cs</DependentUpon>
     </Compile>
-    <Compile Include="GasPollution.cs">
+    <Compile Include="FormGasPollution.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GasPollution.designer.cs">
-      <DependentUpon>GasPollution.cs</DependentUpon>
+    <Compile Include="FormGasPollution.designer.cs">
+      <DependentUpon>FormGasPollution.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -185,11 +185,11 @@
     <Compile Include="MainForm.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MapOperation.cs">
+    <Compile Include="FormMapOperation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MapOperation.Designer.cs">
-      <DependentUpon>MapOperation.cs</DependentUpon>
+    <Compile Include="FormMapOperation.Designer.cs">
+      <DependentUpon>FormMapOperation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,14 +211,14 @@
     <EmbeddedResource Include="FormQueryPollutionEmission.resx">
       <DependentUpon>FormQueryPollutionEmission.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GasPollution.resx">
-      <DependentUpon>GasPollution.cs</DependentUpon>
+    <EmbeddedResource Include="FormGasPollution.resx">
+      <DependentUpon>FormGasPollution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapOperation.resx">
-      <DependentUpon>MapOperation.cs</DependentUpon>
+    <EmbeddedResource Include="FormMapOperation.resx">
+      <DependentUpon>FormMapOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Program.resx">
       <DependentUpon>Program.cs</DependentUpon>

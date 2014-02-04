@@ -20,24 +20,24 @@ namespace EnvironmentSystem
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            edoUserControl1.Open("D:\\workspaces\\huanping.docx");
+            edoUserControl1.Open("D:\\projects\\2014_baojigis\\wordfiles\\huanping.docx");
             //current_file = "D:\\workspaces\\huanping.docx";
         }
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            edoUserControl1.Open("D:\\workspaces\\huanping.docx");
+            edoUserControl1.Open("D:\\projects\\2014_baojigis\\wordfiles\\huanping.docx");
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            edoUserControl2.Open("D:\\workspaces\\pifu.docx");
+            edoUserControl2.Open("D:\\projects\\2014_baojigis\\wordfiles\\pifu.docx");
             //current_file = "D:\\workspaces\\pifu.docx";
         }
 
         private void tabPage3_Enter(object sender, EventArgs e)
         {
-            edoUserControl3.Open("D:\\workspaces\\yanshou.docx");
+            edoUserControl3.Open("D:\\projects\\2014_baojigis\\wordfiles\\yanshou.docx");
             //current_file = "D:\\workspaces\\yanshou.docx";
         }
 

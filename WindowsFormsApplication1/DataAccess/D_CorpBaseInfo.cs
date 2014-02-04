@@ -13,7 +13,7 @@ namespace EnvironmentSystem.DataAccess
     /// </summary>
     class D_CorpBaseInfo
     {
-        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\workspaces\\vs\\WindowsFormsApplication1\\EnvironmentDB.accdb";
+        public static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\projects\\2014_baojigis\\dbfiles\\EnvironmentDB.accdb";
 
         /// <summary>
         /// 增加一行

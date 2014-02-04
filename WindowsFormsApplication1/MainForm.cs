@@ -34,7 +34,7 @@ namespace SimpleForm
             }
 
             Console.WriteLine("new");
-            MapOperation mapOperationForm = new MapOperation();
+            FormMapOperation mapOperationForm = new FormMapOperation();
             // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
             mapOperationForm.MdiParent = this;
             mapOperationForm.WindowState = FormWindowState.Maximized;
@@ -56,7 +56,7 @@ namespace SimpleForm
 
             }
 
-            GasPollution gasPollutionForm = new GasPollution();
+            FormGasPollution gasPollutionForm = new FormGasPollution();
             // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
             gasPollutionForm.MdiParent = this;
             gasPollutionForm.WindowState = FormWindowState.Maximized;
@@ -78,7 +78,7 @@ namespace SimpleForm
 
             }
 
-            MapOperation mapOperationForm = new MapOperation();
+            FormMapOperation mapOperationForm = new FormMapOperation();
             // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
             mapOperationForm.MdiParent = this;
             mapOperationForm.WindowState = FormWindowState.Maximized;

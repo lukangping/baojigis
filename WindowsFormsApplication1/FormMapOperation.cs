@@ -18,11 +18,11 @@ using ESRI.ArcGIS.Display;
 
 namespace WindowsFormsApplication1
 {
-    public partial class MapOperation : Form
+    public partial class FormMapOperation : Form
     {
-        string folder = "D:\\projects\\2014_baojigis\\shp_shanxi";
+        string folder = "D:\\projects\\2014_baojigis\\shapefiles";
 
-        public MapOperation()
+        public FormMapOperation()
         {
             //加入下面一行的代码，用来解决"ArcGIS version not specified."的异常
             ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop);
