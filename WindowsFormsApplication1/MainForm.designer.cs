@@ -45,6 +45,7 @@
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toRasterDatasetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,8 @@
             // 
             // menuUseMap
             // 
+            this.menuUseMap.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toRasterDatasetToolStripMenuItem});
             this.menuUseMap.Name = "menuUseMap";
             this.menuUseMap.Size = new System.Drawing.Size(67, 20);
             this.menuUseMap.Text = "地图操作";
@@ -182,6 +185,12 @@
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.Visible = false;
             // 
+            // toRasterDatasetToolStripMenuItem
+            // 
+            this.toRasterDatasetToolStripMenuItem.Name = "toRasterDatasetToolStripMenuItem";
+            this.toRasterDatasetToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.toRasterDatasetToolStripMenuItem.Text = "toRasterDataset";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -220,6 +229,7 @@
         private System.Windows.Forms.ToolStripMenuItem subMenuEnvivonmentEvaluation;
         private System.Windows.Forms.ToolStripMenuItem 基表信息查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 工业企业污染排放及处理利用情况ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toRasterDatasetToolStripMenuItem;
     }
 }
 

@@ -11,6 +11,7 @@ D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Int
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Interop.LCC11.dll
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.RasterDatasetOperation.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\TestWF.EdoUserControl.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\EnvironmentSystem.FormEnvironmentEvaluation.resources
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.FormPollutionDispose.resources

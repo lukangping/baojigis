@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
 
             //载入底图要素层
             IFeatureLayer featureLayer = new FeatureLayerClass();
-            IFeatureClass featureClass = featureWorkspace.OpenFeatureClass("city_region.shp");
+            IFeatureClass featureClass = featureWorkspace.OpenFeatureClass("newshapefile.shp");
             featureLayer.FeatureClass = featureClass;
             featureLayer.Name = featureClass.AliasName;
             map.AddLayer(featureLayer as ILayer);
@@ -55,12 +55,22 @@ namespace WindowsFormsApplication1
             IFeatureClass enterpriseFeatureClass = featureWorkspace.OpenFeatureClass("enterprise_points.shp");
             enterpriseFeatureLayer.FeatureClass = enterpriseFeatureClass;
             enterpriseFeatureLayer.Name = enterpriseFeatureClass.AliasName;
+
             //符号化
             IGeoFeatureLayer geoFeatureLayer = enterpriseFeatureLayer as IGeoFeatureLayer;
             geoFeatureLayer.Renderer = getSimpleRender() as IFeatureRenderer;
             map.AddLayer(enterpriseFeatureLayer as ILayer);
 
             axMapControl1.ActiveView.Refresh();
+
+            //test shapefile to raster
+            //Console.WriteLine("---toRaster---");
+            RasterDatasetOperation rasterDatasetOperation = new RasterDatasetOperation();
+            //rasterDatasetOperation.toRasterDataset(featureLayer);
+            //Console.WriteLine("---toPointFeature---");
+            //rasterDatasetOperation.toFeatureData();
+            Console.WriteLine("---toCreateThieseenPloygon---");
+            rasterDatasetOperation.createThiessenPolygon(featureLayer);
         }
 
         private ISimpleRenderer getSimpleRender()

@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
 using EnvironmentSystem;
+using ESRI.ArcGIS.esriSystem;
+using ESRI.ArcGIS;
 
 namespace SimpleForm
 {
@@ -15,6 +17,11 @@ namespace SimpleForm
     {
         public MainForm()
         {
+            //ESRI.ArcGIS.RuntimeManager.BindLicense(ProductCode.EngineOrDesktop);
+            //IAoInitialize m_AoInitialize = new AoInitializeClass();
+            //esriLicenseStatus licenseStatus = esriLicenseStatus.esriLicenseUnavailable;
+            //licenseStatus = m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeAdvanced);  
+
             InitializeComponent();
         }
 
@@ -230,6 +237,6 @@ namespace SimpleForm
             formEnvironmentEvaluation.Show();
         }
 
-        
+      
     }
 }
