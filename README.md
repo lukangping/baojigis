@@ -12,3 +12,4 @@ GＩＳ与水质模型集成的邕江突发性水污染事故模
 
 http://blog.csdn.net/zdw_wym/article/details/8025509
 http://wenku.baidu.com/view/51b64f4233687e21af45a9fa.html
+http://www.docin.com/p-204133324.html
