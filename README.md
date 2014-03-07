@@ -9,3 +9,6 @@ http://wenku.baidu.com/view/84bae0f6f705cc1755270971.html
 
 GＩＳ与水质模型集成的邕江突发性水污染事故模
 基于GIS的水污染事故水质模拟系统动力学模型研究
+
+http://blog.csdn.net/zdw_wym/article/details/8025509
+http://wenku.baidu.com/view/51b64f4233687e21af45a9fa.html
