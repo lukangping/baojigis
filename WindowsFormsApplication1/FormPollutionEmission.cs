@@ -55,5 +55,20 @@ namespace SimpleForm
         {
             MessageBox.Show("添加成功");
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label161_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

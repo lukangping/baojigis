@@ -70,6 +70,11 @@ namespace EnvironmentSystem
         {
             //edoUserControl3.Close();
         }
+
+        private void FormEnvironmentEvaluation_Load(object sender, EventArgs e)
+        {
+
+        }
        
     }
 }

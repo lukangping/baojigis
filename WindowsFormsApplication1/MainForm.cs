@@ -237,6 +237,28 @@ namespace SimpleForm
             formEnvironmentEvaluation.Show();
         }
 
-      
+        private void subMenuWaterPollution_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                if (childForm.Name == "FormWaterPollution")
+                {
+                    childForm.Visible = true;
+                    childForm.Activate();
+                    return;
+                }
+
+            }
+
+            FormWaterPollution formWaterPollution = new FormWaterPollution();
+
+            // 在显示该窗体前使其成为此 MDI 窗体的子窗体。
+            formWaterPollution.MdiParent = this;
+            formWaterPollution.WindowState = FormWindowState.Maximized;
+            formWaterPollution.Name = "FormWaterPollution";
+            formWaterPollution.Show();
+        }
+
+             
     }
 }

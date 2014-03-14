@@ -142,6 +142,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\PollutionConcentration.cs" />
     <Compile Include="Business\RasterDatasetOperation.cs" />
     <Compile Include="DataAccess\D_CorpBaseInfo.cs" />
     <Compile Include="DataAccess\D_PollutionDisposeInfo.cs" />
@@ -152,6 +153,12 @@
       <DependentUpon>EdoUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\E_CorpBaseInfo.cs" />
+    <Compile Include="FormWaterPollution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWaterPollution.Designer.cs">
+      <DependentUpon>FormWaterPollution.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEnvironmentEvaluation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +209,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Business\PollutionConcentration.resx">
+      <DependentUpon>PollutionConcentration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Business\RasterDatasetOperation.resx">
       <DependentUpon>RasterDatasetOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGasPollution.resx">
       <DependentUpon>FormGasPollution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWaterPollution.resx">
+      <DependentUpon>FormWaterPollution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

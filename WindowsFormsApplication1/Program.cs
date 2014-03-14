@@ -18,6 +18,9 @@ namespace WindowsFormsApplication1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+            //PollutionConcentration pollutionConcentration = new PollutionConcentration(20, 20);
+            //pollutionConcentration.calculate();
         }
     }
+
 }

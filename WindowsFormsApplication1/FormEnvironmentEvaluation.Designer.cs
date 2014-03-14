@@ -226,6 +226,7 @@ namespace EnvironmentSystem
             this.Controls.Add(this.label2);
             this.Name = "FormEnvironmentEvaluation";
             this.Text = "企业环评记录";
+            this.Load += new System.EventHandler(this.FormEnvironmentEvaluation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

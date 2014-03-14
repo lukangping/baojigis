@@ -26,3 +26,5 @@ D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.exe
 D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\baojigis.pdb
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SimpleForm.FormWaterPollution.resources
+D:\workspaces\vs\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.PollutionConcentration.resources

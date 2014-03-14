@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuUseMap = new System.Windows.Forms.ToolStripMenuItem();
+            this.toRasterDatasetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageEnterprise = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuPollutionEmission = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuPollutionEquipment = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,12 +41,14 @@
             this.工业企业污染排放及处理利用情况ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGasAnalyse = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWaterAnalyse = new System.Windows.Forms.ToolStripMenuItem();
+            this.应急处置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuWaterPollution = new System.Windows.Forms.ToolStripMenuItem();
+            this.大气污染预测ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageUser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDataTransfer = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.toRasterDatasetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +78,12 @@
             this.menuUseMap.Size = new System.Drawing.Size(67, 20);
             this.menuUseMap.Text = "地图操作";
             this.menuUseMap.Click += new System.EventHandler(this.menuUseMap_Click);
+            // 
+            // toRasterDatasetToolStripMenuItem
+            // 
+            this.toRasterDatasetToolStripMenuItem.Name = "toRasterDatasetToolStripMenuItem";
+            this.toRasterDatasetToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.toRasterDatasetToolStripMenuItem.Text = "toRasterDataset";
             // 
             // menuManageEnterprise
             // 
@@ -148,9 +157,32 @@
             // 
             // menuWaterAnalyse
             // 
+            this.menuWaterAnalyse.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.应急处置ToolStripMenuItem,
+            this.subMenuWaterPollution,
+            this.大气污染预测ToolStripMenuItem});
             this.menuWaterAnalyse.Name = "menuWaterAnalyse";
-            this.menuWaterAnalyse.Size = new System.Drawing.Size(55, 20);
-            this.menuWaterAnalyse.Text = "水污染";
+            this.menuWaterAnalyse.Size = new System.Drawing.Size(67, 20);
+            this.menuWaterAnalyse.Text = "应急管理";
+            // 
+            // 应急处置ToolStripMenuItem
+            // 
+            this.应急处置ToolStripMenuItem.Name = "应急处置ToolStripMenuItem";
+            this.应急处置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.应急处置ToolStripMenuItem.Text = "应急处置";
+            // 
+            // subMenuWaterPollution
+            // 
+            this.subMenuWaterPollution.Name = "subMenuWaterPollution";
+            this.subMenuWaterPollution.Size = new System.Drawing.Size(152, 22);
+            this.subMenuWaterPollution.Text = "水污染预测";
+            this.subMenuWaterPollution.Click += new System.EventHandler(this.subMenuWaterPollution_Click);
+            // 
+            // 大气污染预测ToolStripMenuItem
+            // 
+            this.大气污染预测ToolStripMenuItem.Name = "大气污染预测ToolStripMenuItem";
+            this.大气污染预测ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.大气污染预测ToolStripMenuItem.Text = "大气污染预测";
             // 
             // menuManageUser
             // 
@@ -184,12 +216,6 @@
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.Visible = false;
-            // 
-            // toRasterDatasetToolStripMenuItem
-            // 
-            this.toRasterDatasetToolStripMenuItem.Name = "toRasterDatasetToolStripMenuItem";
-            this.toRasterDatasetToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.toRasterDatasetToolStripMenuItem.Text = "toRasterDataset";
             // 
             // MainForm
             // 
@@ -230,6 +256,9 @@
         private System.Windows.Forms.ToolStripMenuItem 基表信息查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 工业企业污染排放及处理利用情况ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toRasterDatasetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 应急处置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subMenuWaterPollution;
+        private System.Windows.Forms.ToolStripMenuItem 大气污染预测ToolStripMenuItem;
     }
 }
 

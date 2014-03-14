@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             IConversionOp conversionOp = new RasterConversionOpClass();
             IRasterAnalysisEnvironment rasterAnalysisEnvironment = conversionOp as IRasterAnalysisEnvironment;
 
-            double dCellSize = 0.30;
+            double dCellSize = 0.0003;
             object oCellSize = dCellSize as object;
 
             rasterAnalysisEnvironment.SetCellSize(esriRasterEnvSettingEnum.esriRasterEnvValue, ref oCellSize);
@@ -70,11 +70,11 @@ namespace WindowsFormsApplication1
             gp.OverwriteOutput = true;
             //gp.SetEnvironmentValue("workspace", "workspacename");
             //gp.SetEnvironmentValue("extent", "all");
-            CreateThiessenPolygons createthiessenpolygon = new CreateThiessenPolygons(@"D:\projects\2014_baojigis\shapefiles\NewShapefile.shp", "D:\\projects\\2014_baojigis\\shapefiles\\NewCTP2.shp");
+            CreateThiessenPolygons createthiessenpolygon = new CreateThiessenPolygons(@"D:\projects\2014_baojigis\shapefiles\NewShapefile.shp", "D:\\projects\\2014_baojigis\\shapefiles\\river_thiessen.shp");
             //CreateThiessenPolygons createthiessenpolygon = new CreateThiessenPolygons();
             //createthiessenpolygon.in_features = featureLayer;
             //createthiessenpolygon.out_feature_class = @"D:\projects\2014_baojigis\shapefiles\NewCTP.shp";
-            createthiessenpolygon.fields_to_copy = "ONLY_FID";
+            createthiessenpolygon.fields_to_copy = "ALL";
             gp.Execute(createthiessenpolygon, null);
             
         }

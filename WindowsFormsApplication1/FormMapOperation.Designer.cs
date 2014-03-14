@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMapOperation));
-            this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.splitContainerLeft = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.axMapControl2 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.splitcontainerMain = new System.Windows.Forms.SplitContainer();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
-            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerLeft)).BeginInit();
             this.splitContainerLeft.Panel1.SuspendLayout();
             this.splitContainerLeft.Panel2.SuspendLayout();
@@ -48,6 +47,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitcontainerMain)).BeginInit();
             this.splitcontainerMain.Panel1.SuspendLayout();
@@ -56,15 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // axLicenseControl1
-            // 
-            this.axLicenseControl1.Enabled = true;
-            this.axLicenseControl1.Location = new System.Drawing.Point(14, 548);
-            this.axLicenseControl1.Name = "axLicenseControl1";
-            this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
-            this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
-            this.axLicenseControl1.TabIndex = 3;
             // 
             // buttonSearch
             // 
@@ -120,6 +111,7 @@
             // 
             // splitContainerLeft.Panel2
             // 
+            this.splitContainerLeft.Panel2.Controls.Add(this.axLicenseControl1);
             this.splitContainerLeft.Panel2.Controls.Add(this.axMapControl2);
             this.splitContainerLeft.Size = new System.Drawing.Size(277, 600);
             this.splitContainerLeft.SplitterDistance = 351;
@@ -144,6 +136,15 @@
             this.splitContainer2.Size = new System.Drawing.Size(277, 351);
             this.splitContainer2.SplitterDistance = 51;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // axLicenseControl1
+            // 
+            this.axLicenseControl1.Enabled = true;
+            this.axLicenseControl1.Location = new System.Drawing.Point(60, 128);
+            this.axLicenseControl1.Name = "axLicenseControl1";
+            this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
+            this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
+            this.axLicenseControl1.TabIndex = 8;
             // 
             // axMapControl2
             // 
@@ -200,12 +201,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 628);
             this.Controls.Add(this.splitcontainerMain);
-            this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axToolbarControl1);
             this.Name = "FormMapOperation";
             this.Text = "FormMapOperation";
             this.Load += new System.EventHandler(this.mapOperation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             this.splitContainerLeft.Panel1.ResumeLayout(false);
             this.splitContainerLeft.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerLeft)).EndInit();
@@ -215,6 +214,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl2)).EndInit();
             this.splitcontainerMain.Panel1.ResumeLayout(false);
             this.splitcontainerMain.Panel2.ResumeLayout(false);
@@ -229,7 +229,6 @@
         #endregion
 
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
-        private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private ESRI.ArcGIS.Controls.AxMapControl axMapControl2;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearchName;
@@ -238,6 +237,7 @@
         private System.Windows.Forms.SplitContainer splitContainerLeft;
         private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
         private System.Windows.Forms.SplitContainer splitcontainerMain;
+        private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
     }
 }
 
