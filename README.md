@@ -17,3 +17,11 @@ http://www.docin.com/p-204133324.html
 
 http://bbs.esrichina-bj.cn/esri/archiver/?tid-120781.html
 http://bbs.esrichina.com.cn/ESRI/viewthread.php?tid=45631
+
+
+(1)PictureSymbolMarker
+
+new PictureSymbolMarker: http://resources.arcgis.com/en/help/arcobjects-net/conceptualhelp/index.html#/d/0001000000n6000000.htm
+
+http://bbs.esrichina-bj.cn/esri/archiver/?tid-77722.html
+
